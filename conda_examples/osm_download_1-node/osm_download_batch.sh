@@ -6,7 +6,7 @@
 #SBATCH --mem=16G
 #SBATCH --cpus-per-task=1
 #SBATCH --mail-type=all
-#SBATCH --mail-user=vc149353@umconnect.umt.edu
+#SBATCH --mail-user=<your-net-id>@umconnect.umt.edu
 
 # Load conda and activate environment
 module load conda

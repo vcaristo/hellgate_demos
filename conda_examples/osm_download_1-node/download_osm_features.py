@@ -7,8 +7,8 @@ from pathlib import Path
 from datetime import datetime
 
 # primary input / output parameters
-counties_df = pd.read_csv('../us_counties.csv')
-download_path = Path(f"../data")
+counties_df = pd.read_csv('input/us_counties.csv')
+download_path = Path(f"output/")
 results_df = pd.DataFrame(columns = ['state', 'name_full', 'name_abbrev', 'downloaded', 'file_path', 'size', 'date'])
 
 # parse the county name
@@ -30,7 +30,8 @@ tags = {"leisure":["pitch", "park", "sports_centre"],
 
 states = counties_df['state'].unique()
 
-for state in states:
+# restrict downlod to two states for demonstration purposes!
+for state in states[2]:
     # create state folder
     state_path = download_path / state
     os.makedirs(state_path, exist_ok=True)
