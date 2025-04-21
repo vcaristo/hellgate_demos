@@ -1,6 +1,6 @@
 # OSM_Download
 
-In this example, we download GIS features (parks, schools, and sports fields) from OpenStreetMaps (OSM) for the entire continental United States (CONUS). I use a single node to download data for 3,223 counties in series. In this case, the HPC was utilized msotly for its robustness and storage capacity. The entire operation took 7 hours and 20 minutes to complete. 
+In this example, we download GIS features (parks, schools, and sports fields) from OpenStreetMaps (OSM) for the entire continental United States (CONUS). I use a single node to download data for 3,223 counties in series. In this case, the HPC was utilized msotly for its robustness and storage capacity. The entire operation took 7 hours and 20 minutes to complete.
 
 ## Running this code
 1. First, open a shell on login node. 
