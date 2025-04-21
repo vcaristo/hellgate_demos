@@ -6,4 +6,4 @@ In Apptainer, container images are stored as .sif files, and their "recipe" is s
 
 ## Building geo_container.def
 
-`apptainer build geopy_container.sif geopy_container.def`
+In my `apptainer build geopy_container.sif geopy_container.def`

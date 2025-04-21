@@ -19,6 +19,6 @@
 
 # 'apptainer run --bind <path_to_local_folder>:<path_in_apptainer> <path to the apptainer sif> <path to the script to run>'
 
-apptainer run --bind ~/osm_project/:/mnt/osm_project/ \
-        ~/osm_project/hpc/apptainer/geopy_container.sif \
+apptainer run --bind ~/hellgate_demos/:/mnt/osm_project/ \
+        ~/hellgate_demos/apptainer/sif/geopy_container.sif \
         /mnt/osm_project/dev/count_features/count_features_apptainer.py
