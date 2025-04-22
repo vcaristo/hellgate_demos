@@ -4,7 +4,8 @@ In this example, we download GIS features (parks, schools, and sports fields) fr
 
 ## Running this code
 1. First, open a shell on login node. 
-2. From the command line, navigate to to folder /hellgate_demos/conda_examples/osm_download_1-node. 
+2. Do `module load conda` to ensure that conda is running.
+2. Navigate to to folder /hellgate_demos/conda_examples/osm_download_1-node. 
 3. Create a new conda environment from the environment from the **environment.yml** file: 
 ```bash
 conda env create -f environment.yml  
