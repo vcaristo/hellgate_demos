@@ -1,8 +1,10 @@
 # Count Features
 
-In this example, I count the number of features (parks, schools, sports fields) that are present in a set previously downloaded GIS files (see 'osm_download_1-node'). There is 1 GIS file for each of the 3,223 counties in the continental US (CONUS). 
+In this example, I count the number of features (parks, schools, sports fields) that are present in a a set of previously downloaded GIS files (see 'osm_download_1-node'). The code is run in an Apptainer container on a single HPC node. In this demonstration, the dataset has been trimmed to include only data from the state of Alabama.
 
-While it's quite a bit of data, this operation is well within the reasonable capabilities of a personal computer. The HPC - and apptainer - was utilized mostly for learning purposes. 
+Even with the data from the entire continential United States, this operation is well within the reasonable capabilities of a personal computer. The HPC - and Apptainer - was utilized mostly for learning purposes. 
+
+This demonstration should execute in under 1 minute. The full operation took 27 minutes to complete.
 
 ## Running this code
 
