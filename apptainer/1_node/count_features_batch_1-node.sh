@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=count-features
-#SBATCH --output=slurm_out/count-features.out
-#SBATCH --error=slurm_out/count-features.err
+#SBATCH --output=output/count-features.out
+#SBATCH --error=output/count-features.err
 #SBATCH --time=12:00:00
 #SBATCH --mem=16G
 #SBATCH --cpus-per-task=1
@@ -19,6 +19,13 @@
 
 # 'apptainer run --bind <path_to_local_folder>:<path_in_apptainer> <path to the apptainer sif> <path to the script to run>'
 
-apptainer run --bind ~/osm_project/:/mnt/osm_project/ \
-        ~/osm_project/hpc/apptainer/geopy_container.sif \
-        /mnt/osm_project/dev/count_features/count_features_apptainer.py
+START=$(date +%s)
+
+apptainer run --bind ~/hellgate_demos/apptainer/1_node/:/mnt/project/ \
+        ~/hellgate_demos/apptainer/sif/geopy_container.sif \
+        /mnt/project/count_features_apptainer.py
+
+END=$(date +%s)
+RUNTIME=$((END - START))
+
+echo "Run time: $RUNTIME seconds ($(awk "BEGIN {print $RUNTIME/60}") minutes)"

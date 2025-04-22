@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=osm-download
-#SBATCH --output=osm-download.out
-#SBATCH --error=osm-download.err
+#SBATCH --output=slurm-out/osm-download.out
+#SBATCH --error=slurm-out/osm-download.err
 #SBATCH --time=12:00:00
 #SBATCH --mem=16G
 #SBATCH --cpus-per-task=1
 #SBATCH --mail-type=all
-#SBATCH --mail-user=<your-net-id>@umconnect.umt.edu
+#SBATCH --mail-user=vc149353@umconnect.umt.edu
 
 # Load conda and activate environment
 module load conda

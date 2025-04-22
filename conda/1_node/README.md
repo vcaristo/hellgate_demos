@@ -7,7 +7,7 @@ In this example, we download GIS features (parks, schools, and sports fields) fr
 2. From the command line, navigate to to folder /hellgate_demos/conda_examples/osm_download_1-node. 
 3. Create a new conda environment from the environment from the **environment.yml** file: 
 ```bash
-conda env create -f environment.yml'.  
+conda env create -f environment.yml  
 ```
 
 This creates an environment called 'us_osm_env', which has all the required packages for running the python script. You can check this by executing `conda env list` from your command line. 

@@ -1,19 +1,23 @@
 import geopandas as gpd
 from pathlib import Path
 import pandas as pd
+import os
 
 # apptainer path 
-base = Path('/mnt/osm_project/data')
+base = Path('/mnt/project')
+data_path = base / "data"
 
 # setup output file
 layers = ['parks', 'pitches', 'sports_centres', 'schools']
 result = pd.DataFrame(columns = ['state', 'county'] + layers)
 
 # list all the state folders
-states = [f.name for f in base.iterdir() if f.is_dir()]
 
+states = [f.name for f in data_path.iterdir() if f.is_dir()]
+
+# there is only one state in the data folder 
 for state in states:
-    state_path = base / state
+    state_path = data_path / state
 
     files = [f for f in state_path.iterdir() if f.is_file()] # full file paths
 
@@ -33,4 +37,5 @@ for state in states:
         # add county data to result
         result.loc[len(result)] = county_data
 
-result.to_csv(base / "features_count_2025-04-09.csv")
+os.makedirs(base / "output", exist_ok=True)
+result.to_csv(base / "output" / "features_count.csv")

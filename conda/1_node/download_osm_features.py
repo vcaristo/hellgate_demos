@@ -8,7 +8,7 @@ from datetime import datetime
 
 # primary input / output parameters
 counties_df = pd.read_csv('input/us_counties.csv')
-download_path = Path(f"output/")
+download_path = Path("output/")
 results_df = pd.DataFrame(columns = ['state', 'name_full', 'name_abbrev', 'downloaded', 'file_path', 'size', 'date'])
 
 # parse the county name
@@ -31,12 +31,13 @@ tags = {"leisure":["pitch", "park", "sports_centre"],
 states = counties_df['state'].unique()
 
 # restrict downlod to two states for demonstration purposes!
-for state in states[2]:
+for state in states[:2]:
     # create state folder
     state_path = download_path / state
     os.makedirs(state_path, exist_ok=True)
 
-    for _, county_row in counties_df[counties_df['state'] == state].iterrows():
+    # restricted to downloading 1 county from each of the two states!
+    for _, county_row in counties_df[counties_df['state'] == state].iloc[0:1].iterrows():
 
         county_full = county_row['name_full']
         county_abbrev = get_abbrev_name(county_row).replace(".","").replace(" ", "_")

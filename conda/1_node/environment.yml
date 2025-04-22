@@ -4,6 +4,6 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - osnmnx
+  - osmnx
   - pandas
   - requests
